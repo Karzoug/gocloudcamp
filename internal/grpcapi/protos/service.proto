@@ -1,0 +1,78 @@
+syntax = "proto3";
+package grpcapi;
+
+import "google/protobuf/duration.proto";
+
+option go_package = "github.com/Karzoug/gocloudcamp;grpcapi";
+
+service PlayerService {
+    rpc Play (PlayRequest) returns (PlayResponse);
+    rpc Pause (PauseRequest) returns (PauseResponse);
+    rpc Next (NextRequest) returns (NextResponse);
+    rpc Prev (PrevRequest) returns (PrevResponse);
+    
+    rpc CreateAudio (CreateAudioRequest) returns (CreateAudioResponse);
+    rpc ReadAudio (ReadAudioRequest) returns (ReadAudioResponse);
+    rpc UpdateAudio (UpdateAudioRequest) returns (UpdateAudioResponse);
+    rpc DeleteAudio (DeleteAudioRequest) returns (DeleteAudioResponse);
+    rpc ListAudio (ListAudioRequest) returns (ListAudioResponse);
+}
+
+message Audio {
+   string id = 1;
+   string name = 2;
+   google.protobuf.Duration duration = 3;
+}
+
+message PlayRequest {
+}
+message PlayResponse {
+}
+
+message PauseRequest {   
+}
+message PauseResponse {
+}
+
+message PrevRequest {  
+}
+message PrevResponse {
+}
+
+message NextRequest {
+}
+message NextResponse {
+}
+  
+message CreateAudioRequest {
+   Audio audio = 1;
+}
+message CreateAudioResponse {
+   Audio audio = 1;
+}
+  
+message ReadAudioRequest {
+   string id = 1;
+}
+message ReadAudioResponse {
+   Audio audio = 1;
+}
+  
+message UpdateAudioRequest {
+   Audio audio = 1;
+}
+message UpdateAudioResponse {
+   Audio audio = 1;
+}
+  
+message DeleteAudioRequest {
+   string id = 1;
+}
+message DeleteAudioResponse {
+}
+
+message ListAudioRequest {
+}
+message ListAudioResponse {
+  repeated Audio Audio = 1;
+}

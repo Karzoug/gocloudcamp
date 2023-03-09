@@ -179,6 +179,18 @@ func (p *MemPlaylist) List(_ context.Context) ([]models.Audio, error) {
 	return slice, nil
 }
 
+func (p *MemPlaylist) SetAll(auds []models.Audio) error {
+	p.mtx.Lock()
+	defer p.mtx.Unlock()
+
+	p.list.Init()
+	for _, a := range auds {
+		p.list.PushBack(a)
+	}
+
+	return nil
+}
+
 func (p *MemPlaylist) Close() error {
 	return nil
 }
