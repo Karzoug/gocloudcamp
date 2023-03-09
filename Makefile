@@ -2,6 +2,10 @@
 build-server: proto
 	cd cmd/server && go build -o server
 
+.PHONY: build-client
+build-client: proto
+	cd cmd/client && go build -o client
+
 .PHONY: linter
 lint:
 	golangci-lint run ./...
