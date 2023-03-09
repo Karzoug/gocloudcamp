@@ -1,5 +1,5 @@
 .PHONY: build-server
-build-server:
+build-server: proto
 	cd cmd/server && go build -o server
 
 .PHONY: linter
@@ -9,6 +9,10 @@ lint:
 .PHONY: test
 test:
 	go test ./...
+
+.PHONY: proto
+proto:
+	protoc --proto_path=internal/grpcapi/protos --go_out=internal/grpcapi/ --go_opt=paths=source_relative --go-grpc_out=internal/grpcapi/ --go-grpc_opt=paths=source_relative internal/grpcapi/protos/service.proto
 
 .PHONY: .install-linter
 .install-linter:
