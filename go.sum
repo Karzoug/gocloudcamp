@@ -1,0 +1,4 @@
+github.com/ivahaev/timer v0.0.0-20220304073306-2c469eaf1e44 h1:xdUcMell47HoK2fvLXxGSHOEUaCVkmRLlHyvqweCPFY=
+github.com/ivahaev/timer v0.0.0-20220304073306-2c469eaf1e44/go.mod h1:VTWGBUSzvBl14TRpHnLd4Zt0MEjS2FpJZ9Rf43pKo6o=
+github.com/rs/xid v1.4.0 h1:qd7wPTDkN6KQx2VmMBLrpHkiyQwgFXRnkOLacUiaSNY=
+github.com/rs/xid v1.4.0/go.mod h1:trrq9SKmegXys3aeAKXMUTdJsYXVwGY3RLcfgqegfbg=
